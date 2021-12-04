@@ -8,7 +8,9 @@ for x in range(1000000):
    num = str(x)
    num = '0'*(6-len(num)) + num
    if int(num[0]) + int(num[1]) + int(num[2]) == int(num[3]) + int(num[4]) + int(num[5]):
-      count = count+1
+        # разкоментить print(num) если нужно показать весь список счастливых билетов
+        # print(num)
+        count = count+1
 print('There are ' + str(count) + ' lucky tickets.')
 
 
