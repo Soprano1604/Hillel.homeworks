@@ -3,8 +3,7 @@
 # Счастливый билет это такой биллет у которого сумма первых трёх цыфр сумме последних трёх цыфр
 print('How many lucky tickets in 6-digit numbers?')
 count = 0
-
-for x in range(1000000):
+for x in range(0, 1000000, 1):
    num = str(x)
    num = '0'*(6-len(num)) + num
    if int(num[0]) + int(num[1]) + int(num[2]) == int(num[3]) + int(num[4]) + int(num[5]):
@@ -12,7 +11,6 @@ for x in range(1000000):
         # print(num)
         count += 1
 print('There are ' + str(count) + ' lucky tickets.')
-
 
 
 # То есть в нашем случае, рендж говорит о количестве повторений циклов.
