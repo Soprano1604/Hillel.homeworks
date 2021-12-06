@@ -1,57 +1,30 @@
-# Переписать калькулятор чтоб можно было последовательно вводить неограниченное колличество чисел и операторов.
-# Приоритеты операторов не учитывать
-# Дополнительно и необязательно - учитывать приоритеты
+# Не учитывать приоритеты
 
-num1 = input()
-action = input()
-num2 = input()
-while True:
-    if (action in ['+', '-', '*', '/']) and num1.isdigit() and num2.isdigit():
-        num1 = int(num1)
-        num2 = int(num2)
+operations = []
 
-        if action == '*':
-            print(num1 * num2)
-            continue
+current_element = ''
 
-        elif action == '/':
-            print(num1 / num2)
-            continue
-
-        elif action == '+':
-            print(num1 + num2)
-            continue
-
-        elif action == '-':
-            print(num1 - num2)
-            continue
-
-
-        else:
-            print('Error')
-    if print('exit'):
+while current_element != '=':
+    current_element = input()
+    if current_element == '=':
         break
+operations = operations + [current_element]
+current_operator = ''
+result = 0
+for element in operations:
+    if element.isdigit():
+        element = int(element)
 
-# a = float(input('Введите первое число: '))
-# operator = input('Введите операцию: ')
-# b = float(input('Введите второе число: '))
-#
-# while True:
-#     if operator == '+':
-#         c = a + b
-#         print(c)
-#         continue
-#     elif operator == '-':
-#         c = a - b
-#         print(c)
-#         continue
-#     elif operator == '*':
-#         c = a * b
-#         print(c)
-#         continue
-#     elif operator == '/':
-#         c = a / b
-#         print(c)
-#         continue
-#     else:
-#         break
+        if current_operator == '+' or current_operator == '':
+            result = result + element
+        elif current_operator == '-':
+            result = result - element
+        elif current_operator == '*':
+            result = result * element
+        else:
+            result = result / element
+
+    else:
+        current_operator = element
+
+print(result)
