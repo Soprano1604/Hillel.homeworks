@@ -3,9 +3,9 @@ import string
 import time
 
 current_date_time = datetime.datetime.now()
-current_time = current_date_time.time()
-start = current_time
-# print(start)
+# current_time = current_date_time.time()
+start = current_date_time
+print(start)
 time.sleep(1)
 def cesar(text, shift):
 
@@ -39,6 +39,7 @@ def undo_cesar(text, shift):
 
 val2 = undo_cesar(val1, 5)
 print(val2)
-current_time2 = current_date_time.time()
-end = datetime.datetime.now()
+current_time2 = current_date_time.now()
+end = current_time2
+print(end)
 print('Duration: {}'.format(end - current_date_time))
